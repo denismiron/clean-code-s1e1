@@ -8,29 +8,29 @@
 
 // Event handling, user interaction is what starts the code execution.
 
-var taskInput = document.getElementById("new-task"); //Add a new task.
-var addButton = document.getElementsByTagName("button")[0]; //first button
-var incompleteTaskHolder = document.getElementById("incompleteTasks"); //ul of #incompleteTasks
-var completedTasksHolder = document.getElementById("completed-tasks"); //completed-tasks
+var taskInput = document.getElementById("new-task");//Add a new task.
+var addButton = document.getElementsByTagName("button")[0];//first button
+var incompleteTaskHolder = document.getElementById("incompleteTasks");//ul of #incompleteTasks
+var completedTasksHolder = document.getElementById("completed-tasks");//completed-tasks
 
 
 //New task list item
-var createNewTaskElement = function(taskString) {
+var createNewTaskElement = function (taskString) {
 
     var listItem = document.createElement("li");
 
     //input (checkbox)
-    var checkBox = document.createElement("input"); //checkbx
+    var checkBox = document.createElement("input");//checkbx
     //label
-    var label = document.createElement("label"); //label
+    var label = document.createElement("label");//label
     //input (text)
-    var editInput = document.createElement("input"); //text
+    var editInput = document.createElement("input");//text
     //button.edit
-    var editButton = document.createElement("button"); //edit button
+    var editButton = document.createElement("button");//edit button
 
     //button.delete
-    var deleteButton = document.createElement("button"); //delete button
-    var deleteButtonImg = document.createElement("img"); //delete button image
+    var deleteButton = document.createElement("button");//delete button
+    var deleteButtonImg = document.createElement("img");//delete button image
 
     label.innerText = taskString;
     label.classList.add("todos__block");
@@ -56,7 +56,7 @@ var createNewTaskElement = function(taskString) {
 
 
     listItem.className = "todos__list-item"
-        //and appending.
+    //and appending.
     listItem.appendChild(checkBox);
     listItem.appendChild(label);
     listItem.appendChild(editInput);
@@ -67,7 +67,7 @@ var createNewTaskElement = function(taskString) {
 
 
 
-var addTask = function() {
+var addTask = function () {
     console.log("Add Task...");
     //Create a new list item with the text from the #new-task:
     if (!taskInput.value) return;
@@ -83,7 +83,7 @@ var addTask = function() {
 
 //Edit an existing task.
 
-var editTask = function() {
+var editTask = function () {
     console.log("Edit Task...");
     console.log("Change 'edit' to 'save'");
 
@@ -112,7 +112,7 @@ var editTask = function() {
 
 
 //Delete task.
-var deleteTask = function() {
+var deleteTask = function () {
     console.log("Delete Task...");
 
     var listItem = this.parentNode;
@@ -124,7 +124,7 @@ var deleteTask = function() {
 
 
 //Mark task completed
-var taskCompleted = function() {
+var taskCompleted = function () {
     console.log("Complete Task...");
 
     //Append the task list item to the #completed-tasks
@@ -137,7 +137,7 @@ var taskCompleted = function() {
 }
 
 
-var taskIncomplete = function() {
+var taskIncomplete = function () {
     console.log("Incomplete Task...");
     //Mark task as incomplete.
     //When the checkbox is unchecked
@@ -151,7 +151,7 @@ var taskIncomplete = function() {
 
 
 
-var ajaxRequest = function() {
+var ajaxRequest = function () {
     console.log("AJAX Request");
 }
 
@@ -164,7 +164,7 @@ addButton.addEventListener("click", addTask);
 addButton.addEventListener("click", ajaxRequest);
 
 
-var bindTaskEvents = function(taskListItem, checkBoxEventHandler) {
+var bindTaskEvents = function (taskListItem, checkBoxEventHandler) {
     console.log("bind list item events");
     //select ListItems children
     var checkBox = taskListItem.querySelector(".todos__todo-checkbox");
@@ -196,7 +196,6 @@ for (var i = 0; i < completedTasksHolder.children.length; i++) {
     //bind events to list items chldren(tasksIncompleted)
     bindTaskEvents(completedTasksHolder.children[i], taskIncomplete);
 }
-
 
 
 
