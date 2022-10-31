@@ -167,15 +167,18 @@ button {
 
 /* Edit Task */
 
-.todos__list-item .todos__todo-form {
+.todos__list-item,
+.todos__todo-form {
     display: none;
 }
 
-.edit-todo .todos__todo-form {
+.edit-todo,
+.todos__todo-form {
     display: inline-block;
     width: 224px;
 }
 
-.edit-todo .todos__todo-label {
+.edit-todo,
+.todos__todo-label {
     display: none;
 }
